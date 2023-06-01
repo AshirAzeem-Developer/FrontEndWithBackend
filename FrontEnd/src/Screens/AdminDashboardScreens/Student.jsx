@@ -4,6 +4,8 @@ import { Add } from '@mui/icons-material'
 import { Get } from '../../config/apibasemethods'
 import AAZShowData from '../../components/AAZShowData'
 import XosX from '../../Images/XOsX.gif'
+import { Route, Routes } from 'react-router-dom'
+import EditStudent from './StudentScreens/EditStudent'
 const Student = () => {
     const [ data, setData ] = useState( [] );
     const [ loader, setLoader ] = useState( false )
@@ -52,6 +54,7 @@ const Student = () => {
                     <AAZShowData dataSource={ data } keys={ dataKeys } />
                 </div>
             </div>
+
         </>
 
     )

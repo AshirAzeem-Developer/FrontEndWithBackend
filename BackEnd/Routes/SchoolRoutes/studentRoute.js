@@ -22,10 +22,23 @@ student.get( '/', async ( req, res ) => {
         res.send( sendResponse( false, null, "Internal Server Error" ) ).status( 400 );
     }
 } )
-// student.get( '/:id', ( req, res ) => {
-//     console.log( "Get Single Student Data" );
+student.get( '/:id', async ( req, res ) => {
+    try {
+        let idRecieved = req.params.id
+        if ( idRecieved ) {
+            let result = await studentModel.findById( idRecieved )
+            if ( !result ) {
+                res.send( sendResponse( false, null, "No Data Found On this Id" ) ).status( 404 )
+            }
+            else {
+                res.send( sendResponse( true, result ) ).status( 200 )
+            }
+        }
+    } catch ( error ) {
+        res.send( sendResponse( false, null, "Error" ) ).status( 400 )
+    }
 
-// } )
+} )
 
 student.post( '/', async ( req, res ) => {
     let { firstName, lastName, email, password, contact } = req.body

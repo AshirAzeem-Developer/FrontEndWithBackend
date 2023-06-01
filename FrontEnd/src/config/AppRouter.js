@@ -11,6 +11,7 @@ import Products from "../Screens/ReduxScreens/Products";
 import Cart from "../Screens/ReduxScreens/Cart";
 import TestScreen from "../Screens/TestScreen";
 import AdminDashboard from "../AdminDashboard";
+import EditStudent from "../Screens/AdminDashboardScreens/StudentScreens/EditStudent";
 
 
 export default function AppRouter() {
@@ -25,6 +26,7 @@ export default function AppRouter() {
           <Route path="studenddashbord/*" Component={Studenddashbord} /> */}
           <Route path="home" element={ <Home /> } />
           <Route path="admin/*" element={ <AdminDashboard /> } />
+          <Route path='editStd/:id' element={ <EditStudent /> } />
           <Route path="login" element={ <Login /> } />
           <Route path="products" element={ <Products /> } />
           <Route path="cart" element={ <Cart /> } />

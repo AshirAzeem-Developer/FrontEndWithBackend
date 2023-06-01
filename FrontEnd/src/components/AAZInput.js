@@ -10,6 +10,7 @@ function AAZInput( props ) {
         variant,
         type,
         myClass,
+        value
     } = props;
     return (
         <>
@@ -21,6 +22,7 @@ function AAZInput( props ) {
                 onChange={ onChange }
                 variant={ variant }
                 type={ type }
+                value={ value }
             />
         </>
     );

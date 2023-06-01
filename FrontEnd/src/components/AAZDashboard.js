@@ -21,6 +21,7 @@ import Student from '../Screens/AdminDashboardScreens/Student';
 import Teacher from '../Screens/AdminDashboardScreens/Teacher';
 import Institute from '../Screens/AdminDashboardScreens/Institute';
 import { AutoStories, Business, Person, School } from '@mui/icons-material';
+import EditStudent from '../Screens/AdminDashboardScreens/StudentScreens/EditStudent';
 
 const drawerWidth = 240;
 
@@ -153,7 +154,7 @@ function AAZDashboard( props ) {
 
                 <Routes>
                     <Route path="course" element={ <Courses /> } />
-                    <Route path="student" element={ <Student /> } />
+                    <Route path="student/*" element={ <Student /> } />
                     <Route path="teacher" element={ <Teacher /> } />
                     <Route path="isntitute" element={ <Institute /> } />
                 </Routes>
