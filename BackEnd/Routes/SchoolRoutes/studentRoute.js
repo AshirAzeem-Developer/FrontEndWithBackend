@@ -8,7 +8,14 @@ const student = express.Router();
 student.get( '/', async ( req, res ) => {
 
     try {
-        const result = await studentModel.find();
+
+        let page = Number( req.query.page ) || 1;
+        let limit = Number( req.query.limit ) || 2;
+
+        let skip = ( page - 1 ) * limit
+
+        const result = await studentModel.find().skip( skip ).limit( limit );
+        // const result = await studentModel.find()
 
         if ( !result ) {
             res.send( sendResponse( false, null, "No Data Found" ) ).status( 404 )

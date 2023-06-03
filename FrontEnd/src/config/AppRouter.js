@@ -9,9 +9,11 @@ import Home from "../Screens/ReduxScreens/Home";
 import Login from "../Screens/ReduxScreens/Login";
 import Products from "../Screens/ReduxScreens/Products";
 import Cart from "../Screens/ReduxScreens/Cart";
-import TestScreen from "../Screens/TestScreen";
+// import TestScreen from "../Screens/TestScreen";
 import AdminDashboard from "../AdminDashboard";
 import EditStudent from "../Screens/AdminDashboardScreens/StudentScreens/EditStudent";
+import LoginScreen from "../Screens/LoginScreen";
+import SignUpScreen from "../Screens/SignupScreen";
 
 
 export default function AppRouter() {
@@ -30,7 +32,8 @@ export default function AppRouter() {
           <Route path="login" element={ <Login /> } />
           <Route path="products" element={ <Products /> } />
           <Route path="cart" element={ <Cart /> } />
-          <Route path="/" element={ <TestScreen /> } />
+          <Route path="/" element={ <LoginScreen /> } />
+          <Route path="signup" element={ <SignUpScreen /> } />
 
         </Routes>
       </BrowserRouter>

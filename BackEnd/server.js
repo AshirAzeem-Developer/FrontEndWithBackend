@@ -87,28 +87,30 @@
 
 
 
-const express = require('express')
-const mongoose = require('mongoose')
-require('dotenv').config();
+const express = require( 'express' )
+const mongoose = require( 'mongoose' )
+require( 'dotenv' ).config();
 const app = express();
-const cors = require('cors')
+const cors = require( 'cors' )
 
-app.use(express.json());
-app.use(cors());
+app.use( express.json() );
+app.use( cors() );
 
-const teacher = require('./Routes/SchoolRoutes/teacherRoute')
-const course = require('./Routes/SchoolRoutes/courseRoute')
-const student = require('./Routes/SchoolRoutes/studentRoute')
-const institute = require('./Routes/SchoolRoutes/instituteRoute')
+const teacher = require( './Routes/SchoolRoutes/teacherRoute' )
+const course = require( './Routes/SchoolRoutes/courseRoute' )
+const student = require( './Routes/SchoolRoutes/studentRoute' )
+const institute = require( './Routes/SchoolRoutes/instituteRoute' )
+const user = require( './Routes/UserRoutes/userRoute' )
 
-app.use('/api/teacher', teacher)
-app.use('/api/courses', course)
-app.use('/api/student', student)
-app.use('/api/institute', institute)
+app.use( '/api/teacher', teacher )
+app.use( '/api/courses', course )
+app.use( '/api/student', student )
+app.use( '/api/institute', institute )
+app.use( '/api/user', user )
 
-mongoose.connect(process.env.MONGO_URI).then(() => {
+mongoose.connect( process.env.MONGO_URI ).then( () => {
 
-    app.listen(process.env.PORT, () => {
-        console.log("Database connected Successfully And Server is listening on this port ");
-    })
-}).catch((err) => { console.log("Failed" + "\t " + err); })
+    app.listen( process.env.PORT, () => {
+        console.log( "Database connected Successfully And Server is listening on this port " );
+    } )
+} ).catch( ( err ) => { console.log( "Failed" + "\t " + err ); } )

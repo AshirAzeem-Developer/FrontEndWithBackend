@@ -3,9 +3,8 @@ import AAZScreenHeader from '../../components/AAZScreenHeader'
 import { Add } from '@mui/icons-material'
 import { Get } from '../../config/apibasemethods'
 import AAZShowData from '../../components/AAZShowData'
-import XosX from '../../Images/XOsX.gif'
-import { Route, Routes } from 'react-router-dom'
-import EditStudent from './StudentScreens/EditStudent'
+// import XosX from '../../Images/XOsX.gif'
+import AAZPagination from '../../components/AAZPagination'
 const Student = () => {
     const [ data, setData ] = useState( [] );
     const [ loader, setLoader ] = useState( false )
@@ -52,6 +51,7 @@ const Student = () => {
             <div className="container-fluid align-items-center">
                 <div className="row justify-content-center p-3 mx-auto">
                     <AAZShowData dataSource={ data } keys={ dataKeys } />
+                    <AAZPagination />
                 </div>
             </div>
 

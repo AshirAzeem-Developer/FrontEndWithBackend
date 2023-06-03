@@ -4,8 +4,8 @@ let apiHandle = axios.create( {
   baseURL: "http://localhost:5000/api/",
 } );
 
-let Get = ( endPoint ) => {
-  return apiHandle.get( endPoint );
+let Get = ( endPoint, page, limit ) => {
+  return apiHandle.get( `${ endPoint }?page=${ page }&limit=${ limit }` );
 };
 let GetById = ( endPoint, id ) => {
   return apiHandle.get( `${ endPoint }/${ id }` );
